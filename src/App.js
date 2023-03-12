@@ -2,19 +2,18 @@ import Header from "./Components/Header";
 
 import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 import Logo from "./chat.svg";
 import ChatRoom from "./Components/ChatRoom";
 
 const signIn = () => {
   const provider = new GoogleAuthProvider();
-  signInWithRedirect(auth, provider);
+  signInWithPopup(auth, provider);
 };
 
 function App() {
   const [user] = useAuthState(auth);
-  console.log(process.env.REACT_APP_API_KEY);
   return (
     <div className="bg-zinc-800 text-slate-50 font-sans min-h-screen">
       {user ? (
