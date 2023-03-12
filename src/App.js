@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 import Logo from "./chat.svg";
+import ChatRoom from "./Components/ChatRoom";
 
 const signIn = () => {
   const provider = new GoogleAuthProvider();
@@ -14,10 +15,11 @@ const signIn = () => {
 function App() {
   const [user] = useAuthState(auth);
   return (
-    <div className="bg-zinc-800 text-slate-50 font-sans">
+    <div className="bg-zinc-800 text-slate-50 font-sans min-h-screen">
       {user ? (
-        <div className="max-w-[728px] mx-auto bg-zinc-600 h-screen">
+        <div className="max-w-[728px] mx-auto bg-zinc-600 min-h-screen">
           <Header />
+          <ChatRoom />
         </div>
       ) : (
         <div className="h-screen flex justify-center items-center">

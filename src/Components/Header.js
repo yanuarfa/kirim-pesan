@@ -5,7 +5,7 @@ import { auth } from "../firebase";
 
 export default function Header() {
   return (
-    <div className="w-full h-16 bg-slate-800 flex items-center justify-center">
+    <div className="w-full h-[10vh] bg-slate-800 flex items-center justify-center fixed max-w-[728px]">
       <div className="w-11/12 flex justify-between items-center">
         <div className="flex justify-center items-center">
           <img src={Logo} alt="Kirim pesan!" width={40} />
