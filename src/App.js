@@ -13,7 +13,6 @@ const signIn = () => {
 
 function App() {
   const [user] = useAuthState(auth);
-  console.log(user);
   return (
     <div className="bg-zinc-800 text-slate-50 font-sans">
       {user ? (
